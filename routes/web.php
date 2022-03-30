@@ -18,4 +18,5 @@ use App\Http\Controllers\HomeController;
 Route::get('', [HomeController::class, 'index'])->name("homepage");
 Route::match(["post","get"],'/donor/apply', [HomeController::class, 'insertDonor'])->name("insert.donor");
 Route::get('/plasma/request', [HomeController::class, 'insertRequest'])->name("insert.request");
+Route::get("/donor/manage",[HomeController::class,"manageDonor"])->name("donor.manage");
 Route::post('api/fetch-cities', [DropdownController::class, 'fetchCity']);

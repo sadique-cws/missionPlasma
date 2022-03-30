@@ -5,10 +5,9 @@
     <div class="container mt-2">
         <div class="card col-7 mx-auto">
             <div class="card-body">
-                <h5 class="h5">Apply as Donor</h5>
+                <h5 class="h5">Apply As Donor</h5>
                 <hr>
                 <form action="" method="POST">
-                    @csrf
                    <div class="row">
                     <div class="mb-3 col">
                         <label for="">Name</label>
@@ -17,17 +16,32 @@
                             <p class="text-danger small">{{ $message }}</p>
                         @enderror
                     </div>
-                    <div class="mb-3 col">
-                        <label for="">gender</label>
-                        <input type="text" placeholder="Enter gender" name="gender" value="{{ old("gender") }}" class="form-control @error('gender') is-invalid @enderror">
-                        @error('gender')
-                            <p class="text-danger small">{{ $message }}</p>
-                        @enderror
-                    </div>
+                    
                     <div class="mb-3 col">
                         <label for="">age</label>
                         <input type="text" placeholder="Enter age" name="age" value="{{ old("age") }}" class="form-control @error('gender') is-invalid @enderror">
                         @error('age')
+                            <p class="text-danger small">{{ $message }}</p>
+                        @enderror
+                    </div>
+                   </div>
+                   <div class="row">
+                    <div class="mb-3 col">
+                        <label for="">gender</label>
+                        <br>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="gender" id="inlineRadio1" value="Male">
+                            <label class="form-check-label" for="inlineRadio1">Male</label>
+                          </div>
+                          <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="gender" id="inlineRadio2" value="Female" checked>
+                            <label class="form-check-label" for="inlineRadio2">Female</label>
+                          </div>
+                          <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="gender" id="inlineRadio2" value="Other">
+                            <label class="form-check-label" for="inlineRadio2">Other</label>
+                          </div>
+                        @error('gender')
                             <p class="text-danger small">{{ $message }}</p>
                         @enderror
                     </div>
@@ -93,7 +107,7 @@
                    
                     <div class="mb-3">
                         <label for="">State</label>
-                        <select id="state-dd" class="form-select" name="state_id">
+                        <select id="state-dd" class="form-select">
                             @foreach ($states as $item)
                                 <option value="{{ $item->id }}">{{ $item->name }}</option>
                             @endforeach
@@ -104,7 +118,7 @@
                     </div>
                     <div class="mb-3">
                         <label for="">City</label>
-                        <select id="city-dd" class="form-select" name="city_id">
+                        <select id="city-dd" class="form-select">
                             <option value="" selected disabled>Please select State First</option>
                         </select>
                          @error('city_id')

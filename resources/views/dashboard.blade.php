@@ -9,6 +9,7 @@
                     <div class="card-body">
                         <h2 class="display-5 mb-0">{{ $countDonor }}</h2>
                         <h4 class="lead">Total Donors</h4>
+                        <a href="{{ route("donor.manage") }}" class="btn btn-light float-end">View Donors</a>
                     </div>
                 </div>
             </div>
@@ -17,6 +18,7 @@
                     <div class="card-body">
                         <h2 class="display-5 mb-0">{{ $countRequest }}</h2>
                         <h4 class="lead">Total Requesters</h4>
+                        <a href="" class="btn btn-light float-end">View Requests</a>
                     </div>
                 </div>
             </div>
@@ -26,8 +28,8 @@
                 <div class="col-3 my-1">
                     <a href="" class="btn @if($loop->even) btn-primary @else btn-info @endif py-3 w-100">
                         {{ $item->name }}
-                        <p class="small m-0">Total Donors: {{ $item->donor }}</p>
-                        <p class="small m-0">Total Requesters: 30</p>
+                        <p class="small m-0">Total Donors: {{ $item->donor_count }}</p>
+                        <p class="small m-0">Total Requesters: {{ $item->requester_count }}</p>
                     </a>
                 </div>
                 @endforeach

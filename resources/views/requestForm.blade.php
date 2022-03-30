@@ -16,17 +16,32 @@
                             <p class="text-danger small">{{ $message }}</p>
                         @enderror
                     </div>
-                    <div class="mb-3 col">
-                        <label for="">gender</label>
-                        <input type="text" placeholder="Enter gender" name="gender" value="{{ old("gender") }}" class="form-control @error('gender') is-invalid @enderror">
-                        @error('gender')
-                            <p class="text-danger small">{{ $message }}</p>
-                        @enderror
-                    </div>
+                    
                     <div class="mb-3 col">
                         <label for="">age</label>
                         <input type="text" placeholder="Enter age" name="age" value="{{ old("age") }}" class="form-control @error('gender') is-invalid @enderror">
                         @error('age')
+                            <p class="text-danger small">{{ $message }}</p>
+                        @enderror
+                    </div>
+                   </div>
+                   <div class="row">
+                    <div class="mb-3 col">
+                        <label for="">gender</label>
+                        <br>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="gender" id="inlineRadio1" value="Male">
+                            <label class="form-check-label" for="inlineRadio1">Male</label>
+                          </div>
+                          <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="gender" id="inlineRadio2" value="Female" checked>
+                            <label class="form-check-label" for="inlineRadio2">Female</label>
+                          </div>
+                          <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="gender" id="inlineRadio2" value="Other">
+                            <label class="form-check-label" for="inlineRadio2">Other</label>
+                          </div>
+                        @error('gender')
                             <p class="text-danger small">{{ $message }}</p>
                         @enderror
                     </div>
